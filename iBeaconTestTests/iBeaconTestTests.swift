@@ -2,8 +2,8 @@
 //  iBeaconTestTests.swift
 //  iBeaconTestTests
 //
-//  Created by Robin on 13.10.14.
-//  Copyright (c) 2014 HSR. All rights reserved.
+//  Created by Dario Andreoli on 09.11.14.
+//  Copyright (c) 2014 Dario Andreoli. All rights reserved.
 //
 
 import UIKit

@@ -23,9 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This application monitors your location to show you promotional offers in shops you&apos;re passing by.</string>
-	<key>NSLocationWhenInUsageDescription</key>
-	<string>This application uses your location to determine which table you&apos;re at when ordering your coffee.</string>
+	<string>Location Zugriff erlauben?</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>
