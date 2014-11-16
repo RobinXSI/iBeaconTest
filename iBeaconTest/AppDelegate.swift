@@ -100,7 +100,7 @@ extension AppDelegate: CLLocationManagerDelegate {
             case CLProximity.Near:
                 message = "You are near the beacon"
             case CLProximity.Immediate:
-                message = "You are in the immediate proximity of the beacon"
+                message = "You are in the immediate proximity of the beacon "
             case CLProximity.Unknown:
                 return
             }
