@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
     
     var question: Question!
     
+    var delegate: answerQuestionDelegate?
+    
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerOneButton: UIButton!
     @IBOutlet weak var answerTwoButton: UIButton!
@@ -38,7 +40,7 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func okButtonPressed(sender: UIButton) {
-        
+        dismissViewControllerAnimated(false, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -69,8 +71,9 @@ class DetailViewController: UIViewController {
         answerThreeButton.enabled = false
         answerFourButton.enabled = false
         
-        if (answerOneButton == question.solution) {
+        if (answerIndex == question.solution) {
             answerNumber.backgroundColor = UIColor.greenColor()
+            delegate?.answerQuestion(question.beaconId, isRight: true)
         } else {
             answerNumber.backgroundColor = UIColor.redColor()
             switch question.solution {
@@ -85,6 +88,7 @@ class DetailViewController: UIViewController {
             default:
                 answerNumber.setTitle("no correct answer", forState: UIControlState.Normal)
             }
+            delegate?.answerQuestion(question.beaconId, isRight: false)
         }
         
         okButton.hidden = false

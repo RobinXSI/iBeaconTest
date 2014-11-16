@@ -8,12 +8,14 @@
 
 import Foundation
 
-class Question {
+class Question : Equatable {
     let title: String
     let text: String
     let answers: [String]
     let solution: Int
     let beaconId: Int
+    var isAnswered: Bool = false
+    var isRight: Bool = false
     
     init(title: String, text:String, answers:[String], solution:Int, beaconId:Int) {
         self.title = title
@@ -22,4 +24,9 @@ class Question {
         self.solution = solution
         self.beaconId = beaconId
     }
+    
+}
+
+func ==(lhs: Question, rhs: Question) -> Bool {
+    return lhs.beaconId == rhs.beaconId
 }

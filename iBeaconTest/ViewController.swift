@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, answerQuestionDelegate {
     
     @IBOutlet var tableView: UITableView?
     var beacons: [CLBeacon]?
@@ -40,9 +40,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "segueDetail") {
             var svc = segue.destinationViewController as DetailViewController;
-            
+            svc.delegate = self
             svc.question = question
         }
+    }
+    
+    func answerQuestion(question: Int, isRight: Bool) {
+        var question = getQuestion(question)
+        question?.isAnswered = true
+        question?.isRight = isRight
+        println(isRight.description)
     }
 
 
@@ -60,17 +67,20 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            var answers1 = ["Response1", "Response2", "Response3", "Response4"]
-            var question1 = Question(title:"Bärenhöhle von Ricardo", text:"Text for Question 1", answers:answers1, solution:2, beaconId:43114)
-            var answers2 = ["Response2_1", "Response2_2", "Response2_3", "Response2_4"]
-            var question2 = Question(title:"Vogelnest vom Orangutan", text:"Text for Question 2", answers:answers2, solution:3, beaconId:43115)
+            if (questions.isEmpty) {
+                var answers1 = ["Response1", "Response2", "Response3", "Response4"]
+                var question1 = Question(title:"Bärenhöhle von Ricardo", text:"Text for Question 1", answers:answers1, solution:2, beaconId:43114)
+                var answers2 = ["Response2_1", "Response2_2", "Response2_3", "Response2_4"]
+                var question2 = Question(title:"Vogelnest vom Orangutan", text:"Text for Question 2", answers:answers2, solution:3, beaconId:43115)
+                
+                questions = [question1, question2]
+            }
             
-            questions = [question1, question2]
             
             var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as? UITableViewCell
             
             if(cell == nil) {
-                cell = UITableViewCell(style: UITableViewCellStyle.Subtitle,
+                cell = UITableViewCell(style: UITableViewCellStyle.Default,
                     reuseIdentifier: "MyIdentifier")
                 cell!.selectionStyle = UITableViewCellSelectionStyle.None
             }
@@ -86,6 +96,15 @@ extension ViewController: UITableViewDataSource {
             } else {
                 cell?.userInteractionEnabled = true
             }
+            
+            if (question!.isAnswered && question!.isRight) {
+                cell?.imageView.image = UIImage(named: "Tick.png")
+            } else if (question!.isAnswered) {
+                cell?.imageView.image = UIImage(named: "Error.png")
+            } else {
+                cell?.imageView.image = nil
+            }
+            
             
             return cell!
     }
