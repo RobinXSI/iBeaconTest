@@ -82,16 +82,7 @@ extension AppDelegate: CLLocationManagerDelegate {
         viewController.beacons = beacons as [CLBeacon]?
         viewController.tableView!.reloadData()
         
-        if (viewController.questions.isEmpty) {
-            var answers1 = ["Response1", "Response2", "Response3", "Response4"]
-            var question1 = Question(title:"Bärenhöhle von Ricardo", text:"Text for Question 1", answers:answers1, solution:2, beaconId:43114)
-            var answers2 = ["Response2_1", "Response2_2", "Response2_3", "Response2_4"]
-            var question2 = Question(title:"Vogelnest vom Orangutan", text:"Text for Question 2", answers:answers2, solution:3, beaconId:43115)
-            
-            let questions = [question1, question2]
-            viewController.questions = questions
-        }
-        
+
         
         
         println("didRangeBeacons")

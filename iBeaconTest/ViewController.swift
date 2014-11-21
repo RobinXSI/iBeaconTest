@@ -19,7 +19,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        var answers1 = ["Response1", "Response2", "Response3", "Response4"]
+        var question1 = Question(title:"Bärenhöhle von Ricardo", text:"Text for Question 1", answers:answers1, solution:2, beaconId:43114)
+        var answers2 = ["Response2_1", "Response2_2", "Response2_3", "Response2_4"]
+        var question2 = Question(title:"Vogelnest vom Orangutan", text:"Text for Question 2", answers:answers2, solution:3, beaconId:43115)
+        
+        self.questions = [question1, question2]
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,10 +34,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func getBeacon(id: NSNumber) -> CLBeacon? {
-        for beacon:CLBeacon in beacons! {
-            if (beacon.minor == id) {
-                return beacon
+        if (beacons != nil) {
+            for beacon:CLBeacon in beacons! {
+                if (beacon.minor == id) {
+                    return beacon
+                }
             }
+            return nil
         }
         return nil
     }
@@ -71,36 +80,31 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as? UITableViewCell
             
-            if(cell == nil) {
-                cell = UITableViewCell(style: UITableViewCellStyle.Default,
-                    reuseIdentifier: "MyIdentifier")
-                cell!.selectionStyle = UITableViewCellSelectionStyle.None
-            }
             
+            var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell
             
             let question:Question = questions[indexPath.row]
             let beacon:CLBeacon? = getBeacon(question.beaconId)
             
-            cell!.textLabel.text = question.title
+            cell.textLabel.text = question.title
             
             if(beacon == nil || (beacon!.proximity != CLProximity.Immediate && beacon!.proximity != CLProximity.Near)) {
-                cell?.userInteractionEnabled = false
+                cell.userInteractionEnabled = false
             } else {
-                cell?.userInteractionEnabled = true
+                cell.userInteractionEnabled = true
             }
             
             if (question.isAnswered && question.isRight) {
-                cell?.imageView.image = UIImage(named: "Tick.png")
+                cell.imageView.image = UIImage(named: "Tick.png")
             } else if (question.isAnswered) {
-                cell?.imageView.image = UIImage(named: "Error.png")
+                cell.imageView.image = UIImage(named: "Error.png")
             } else {
-                cell?.imageView.image = nil
+                cell.imageView.image = nil
             }
             
             
-            return cell!
+            return cell
     }
 }
 

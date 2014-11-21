@@ -94,12 +94,12 @@
 				A3D49C9F1A0FA03D00107E1A /* AppDelegate.swift */,
 				A3616E011A18F8EA008FD2D5 /* protocol.swift */,
 				A3D49CA11A0FA03D00107E1A /* ViewController.swift */,
+				A3616DFF1A18E316008FD2D5 /* DetailViewController.swift */,
 				A3D49CA31A0FA03D00107E1A /* Main.storyboard */,
 				A3D49CA61A0FA03D00107E1A /* Images.xcassets */,
 				A3D49CA81A0FA03D00107E1A /* LaunchScreen.xib */,
 				A3D49C9D1A0FA03D00107E1A /* Supporting Files */,
 				A3616DFB1A161383008FD2D5 /* Question.swift */,
-				A3616DFF1A18E316008FD2D5 /* DetailViewController.swift */,
 			);
 			path = iBeaconTest;
 			sourceTree = "<group>";
