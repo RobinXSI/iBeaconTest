@@ -10,8 +10,8 @@
 		A3616DFC1A161383008FD2D5 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3616DFB1A161383008FD2D5 /* Question.swift */; };
 		A3616E001A18E316008FD2D5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3616DFF1A18E316008FD2D5 /* DetailViewController.swift */; };
 		A3616E021A18F8EA008FD2D5 /* protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3616E011A18F8EA008FD2D5 /* protocol.swift */; };
-		A3616E091A190EB1008FD2D5 /* Error.png in Resources */ = {isa = PBXBuildFile; fileRef = A3616E071A190EB1008FD2D5 /* Error.png */; };
-		A3616E0A1A190EB1008FD2D5 /* Tick.png in Resources */ = {isa = PBXBuildFile; fileRef = A3616E081A190EB1008FD2D5 /* Tick.png */; };
+		A383EB881A1F6ABA00E480BE /* Error.png in Resources */ = {isa = PBXBuildFile; fileRef = A383EB861A1F6ABA00E480BE /* Error.png */; };
+		A383EB891A1F6ABA00E480BE /* Tick.png in Resources */ = {isa = PBXBuildFile; fileRef = A383EB871A1F6ABA00E480BE /* Tick.png */; };
 		A3D49CA01A0FA03D00107E1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D49C9F1A0FA03D00107E1A /* AppDelegate.swift */; };
 		A3D49CA21A0FA03D00107E1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D49CA11A0FA03D00107E1A /* ViewController.swift */; };
 		A3D49CA51A0FA03D00107E1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D49CA31A0FA03D00107E1A /* Main.storyboard */; };
@@ -35,8 +35,8 @@
 		A3616DFB1A161383008FD2D5 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		A3616DFF1A18E316008FD2D5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A3616E011A18F8EA008FD2D5 /* protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = protocol.swift; sourceTree = "<group>"; };
-		A3616E071A190EB1008FD2D5 /* Error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Error.png; path = ../../../../../../Desktop/Error.png; sourceTree = "<group>"; };
-		A3616E081A190EB1008FD2D5 /* Tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tick.png; path = ../../../../../../Desktop/Tick.png; sourceTree = "<group>"; };
+		A383EB861A1F6ABA00E480BE /* Error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Error.png; sourceTree = "<group>"; };
+		A383EB871A1F6ABA00E480BE /* Tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tick.png; sourceTree = "<group>"; };
 		A3D49C9A1A0FA03D00107E1A /* iBeaconTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBeaconTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D49C9E1A0FA03D00107E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3D49C9F1A0FA03D00107E1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,9 +107,9 @@
 		A3D49C9D1A0FA03D00107E1A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A3616E071A190EB1008FD2D5 /* Error.png */,
-				A3616E081A190EB1008FD2D5 /* Tick.png */,
 				A3D49C9E1A0FA03D00107E1A /* Info.plist */,
+				A383EB861A1F6ABA00E480BE /* Error.png */,
+				A383EB871A1F6ABA00E480BE /* Tick.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -218,8 +218,8 @@
 			files = (
 				A3D49CA51A0FA03D00107E1A /* Main.storyboard in Resources */,
 				A3D49CAA1A0FA03D00107E1A /* LaunchScreen.xib in Resources */,
-				A3616E0A1A190EB1008FD2D5 /* Tick.png in Resources */,
-				A3616E091A190EB1008FD2D5 /* Error.png in Resources */,
+				A383EB891A1F6ABA00E480BE /* Tick.png in Resources */,
+				A383EB881A1F6ABA00E480BE /* Error.png in Resources */,
 				A3D49CA71A0FA03D00107E1A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
